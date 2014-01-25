@@ -12,9 +12,10 @@ right_hand_diamond_cursor_plus
 
 ## Right Hand Diamond Cursor Plus with Custom Complete Vi Mode
 
-* You can use Vi style navigation on any applications when "Complete Vi Mode" is on.
-* Turn on a setting below, and toggle "Complete Vi Mode".
-* It is a list of the operation.
+You can use Vi style navigation on any applications when "Complete Vi Mode" is on.
+Turn on a setting, and toggle "Complete Vi Mode".
+It is a list of the operation.
+
 * jkil to Left/Down/Up/Right
 * u to PageUp
 * m to PageDown
