@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<root>
+
+  <item>
+    <name>Right Hand Diamond Cursor Plus With COMMAND_R</name>
+    <appendix>COMMAND_R+j/k/i/l to move left/down/up/right.</appendix>
+    <appendix>COMMAND_R+u/m/o/. to pageUp/pageDown/home/end.</appendix>
+    <appendix>COMMAND_R+h//;/'. to forward delete/delete/enter.</appendix>
+    <appendix>they should work with command_l/option/shift.</appendix>
+    <appendix>Example: COMMAND_L+COMMAND_R+j to command+left</appendix>
+    <appendix>Example: OPTION+COMMAND_R+j to OPTION+left</appendix>
+    <identifier>remap.right_hand_diamond_cursor_plus_with_command_right</identifier>
+    <autogen>--KeyToKey-- KeyCode::J, ModifierFlag::COMMAND_R, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>--KeyToKey-- KeyCode::K, ModifierFlag::COMMAND_R, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::I, ModifierFlag::COMMAND_R, KeyCode::CURSOR_UP</autogen>
+    <autogen>--KeyToKey-- KeyCode::L, ModifierFlag::COMMAND_R, KeyCode::CURSOR_RIGHT</autogen>
+    <autogen>--KeyToKey-- KeyCode::U, ModifierFlag::COMMAND_R, KeyCode::PAGEUP</autogen>
+    <autogen>--KeyToKey-- KeyCode::M, ModifierFlag::COMMAND_R, KeyCode::PAGEDOWN</autogen>
+    <autogen>--KeyToKey-- KeyCode::O, ModifierFlag::COMMAND_R, KeyCode::HOME</autogen>
+    <autogen>--KeyToKey-- KeyCode::DOT, ModifierFlag::COMMAND_R, KeyCode::END</autogen>
+    <autogen>--KeyToKey-- KeyCode::H, ModifierFlag::COMMAND_R, KeyCode::FORWARD_DELETE</autogen>
+    <autogen>--KeyToKey-- KeyCode::SEMICOLON, ModifierFlag::COMMAND_R, KeyCode::DELETE</autogen>
+    <autogen>--KeyToKey-- KeyCode::QUOTE, ModifierFlag::COMMAND_R, KeyCode::RETURN</autogen>
+  </item>
+
+  <item>
+    <name>Right Hand Diamond Cursor Plus with Custom Complete Vi Mode</name>
+    <item>
+      <name>What's Right Hand Diamond Cursor Plus with Custom Complete Vi Mode?</name>
+      <appendix>You can use Vi style navigation on any applications when "Complete Vi Mode" is on.</appendix>
+      <appendix>Turn on a setting below, and toggle "Complete Vi Mode".</appendix>
+      <appendix></appendix>
+      <appendix>It is a list of the operation.</appendix>
+      <appendix>- jkil to Left/Down/Up/Right</appendix>
+       <appendix>- u to PageUp</appendix>
+      <appendix>- m to PageDown</appendix>
+      <appendix>- o to Home</appendix>
+      <appendix>- . to End</appendix>
+      <appendix>- h to Forward Delete</appendix>
+      <appendix>- ; to Delete</appendix>
+      <identifier vk_config="true">notsave.custom_complete_vimode</identifier>
+      <autogen>__ShowStatusMessage__ Vi Mode</autogen>
+      <block>
+        <!-- these ugly hacks must be placed before the settings -->
+        <!-- ugly hack for dvorak's command + s, c, t, v to enable basic key bindings-->
+        <!-- s -->
+        <autogen>__KeyToKey__ KeyCode::SEMICOLON, ModifierFlag::COMMAND_L, KeyCode::SEMICOLON, ModifierFlag::COMMAND_L</autogen>
+        <!-- c -->
+        <autogen>__KeyToKey__ KeyCode::I, ModifierFlag::COMMAND_L, KeyCode::I, ModifierFlag::COMMAND_L</autogen>
+        <!-- k -->
+        <autogen>__KeyToKey__ KeyCode::K, ModifierFlag::COMMAND_L, KeyCode::K, ModifierFlag::COMMAND_L</autogen>
+        <!-- v -->
+        <autogen>__KeyToKey__ KeyCode::DOT, ModifierFlag::COMMAND_L, KeyCode::DOT, ModifierFlag::COMMAND_L</autogen>
+        <!-- d -->
+        <autogen>__KeyToKey__ KeyCode::H, ModifierFlag::COMMAND_L, KeyCode::H, ModifierFlag::COMMAND_L</autogen>
+        <!-- ugly hack for control+s to delete on this mode -->
+        <autogen>--KeyToKey-- KeyCode::SEMICOLON, VK_CONTROL, KeyCode::DELETE</autogen>
+        <!-- ugly hack for control+d to delete on this mode -->
+        <autogen>--KeyToKey-- KeyCode::H, VK_CONTROL, KeyCode::FORWARD_DELETE</autogen>
+
+        <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_LEFT</autogen>
+        <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_DOWN</autogen>
+        <autogen>__KeyToKey__ KeyCode::I, KeyCode::CURSOR_UP</autogen>
+        <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
+        <autogen>--KeyToKey-- KeyCode::U, KeyCode::PAGEUP</autogen>
+        <autogen>--KeyToKey-- KeyCode::M, KeyCode::PAGEDOWN</autogen>
+        <autogen>--KeyToKey-- KeyCode::O, KeyCode::HOME</autogen>
+        <autogen>--KeyToKey-- KeyCode::DOT, KeyCode::END</autogen>
+        <autogen>--KeyToKey-- KeyCode::H, KeyCode::FORWARD_DELETE</autogen>
+        <autogen>--KeyToKey-- KeyCode::SEMICOLON, KeyCode::DELETE</autogen>
+        <autogen>__KeyToKey__ KeyCode::F, KeyCode::VK_LOCK_ALL_FORCE_OFF, KeyCode::VK_CONFIG_FORCE_OFF_notsave_custom_complete_vimode</autogen>
+        <autogen>__KeyToKey__ KeyCode::G, KeyCode::VK_LOCK_ALL_FORCE_OFF, KeyCode::VK_CONFIG_FORCE_OFF_notsave_custom_complete_vimode</autogen>
+      </block>
+    </item>
+    <item>
+      <name>Option_R to Option_R</name>
+      <appendix>(+ When you type Option_R only, turn on Vi Mode)</appendix>
+      <identifier>remap.custom_vimode_turn_on_OPTION_R</identifier>
+      <autogen>__KeyOverlaidModifier__ KeyCode::OPTION_R, KeyCode::OPTION_R, KeyCode::VK_CONFIG_FORCE_ON_notsave_custom_complete_vimode</autogen>
+    </item>
+    <item>
+      <name>Command_L to Command_L</name>
+      <appendix>(+ When you type Command_L only, turn off Vi Mode)</appendix>
+      <identifier>remap.custom_vimode_turn_off_commandL</identifier>
+      <autogen>__KeyOverlaidModifier__ KeyCode::COMMAND_L, KeyCode::COMMAND_L, KeyCode::VK_CONFIG_FORCE_OFF_notsave_custom_complete_vimode</autogen>
+    </item>
+  </item>
+
+    <item>
+    <name>Vi Mode Off For Japanese</name>
+    <item>
+      <name>左右のコマンドキー（⌘）を「英数／かな」としても使う</name>
+      <appendix>（左コマンドキーを英数キーにする）</appendix>
+      <appendix>（右コマンドキーをかなキーにする）</appendix>
+      <item>
+        <name>コマンドキーの動作を優先モード</name>
+        <appendix>（コマンドキーの空打ちで「英数／かな」）</appendix>
+        <appendix>（コマンドキーを押している間に他のキーを打つと通常のコマンドキーとして動作）</appendix>
+        <appendix>（コマンドキーでVi mode off）</appendix>
+        <identifier>remap.with_vi_jis_command2eisuukana_prefer_command</identifier>
+        <autogen>__KeyOverlaidModifier__ KeyCode::COMMAND_L, KeyCode::COMMAND_L, KeyCode::JIS_EISUU, KeyCode::VK_CONFIG_FORCE_OFF_notsave_custom_complete_vimode</autogen>
+        <autogen>__KeyOverlaidModifier__ KeyCode::COMMAND_R, KeyCode::COMMAND_R, KeyCode::JIS_KANA, KeyCode::VK_CONFIG_FORCE_OFF_notsave_custom_complete_vimode</autogen>
+      </item>
+    </item>
+  </item>
+
+</root>
